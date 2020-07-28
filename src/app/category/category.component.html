@@ -1,0 +1,25 @@
+<mat-card class="card-str" >
+    <mat-card-title class="card-tle" >Create Category</mat-card-title>
+    <mat-card-content class="card-cont" >
+
+        <mat-form-field class="chip-list">
+            <mat-chip-list #chipList>
+              <mat-chip *ngFor="let catg of categories" [selectable]="selectable"
+                       [removable]="removable" (removed)="remove(catg)">
+                {{catg.categoryName}}
+                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+              </mat-chip>
+              <input placeholder="Add new categories..."
+                     [matChipInputFor]="chipList"
+                     
+                     [matChipInputAddOnBlur]="addOnBlur"
+                     (matChipInputTokenEnd)="add($event)">
+            </mat-chip-list>
+          </mat-form-field>
+          
+
+
+
+    </mat-card-content>
+    
+</mat-card>

@@ -1,0 +1,33 @@
+.chip-list{
+    width:100%
+}
+.card-str{
+    margin : 0 auto;
+    width: 60%;
+    margin-top: 20px;
+}
+
+.mat-chip:not(.mat-basic-chip)+.mat-chip:not(.mat-basic-chip) {
+    margin-top : 2px;
+}
+
+.mat-card-title{
+    font-weight: bolder;
+    font-size: 20px;
+    color: white;
+    background-color: #3f51b5;
+    line-height: 42px;
+    text-align: center;
+   
+}
+
+.mat-chip:not(.mat-basic-chip) {
+    background-color: lightgray;
+    color: #3f51b5;
+}
+
+.mat-card {
+    border-radius: 8px !important;
+  }
+
+  

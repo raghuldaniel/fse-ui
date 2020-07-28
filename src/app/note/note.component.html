@@ -1,0 +1,23 @@
+<mat-card class="card-str" [ngStyle]="{'background-color' : note.color}" >
+        
+    <mat-card-title class="card-tle" >{{note.noteTitle}}</mat-card-title>
+
+    <mat-card-content class="card-cont" >{{note.noteContent}}</mat-card-content>
+    <mat-card-footer>
+        <div class="actions">
+           <i class="material-icons" (click)="edit()">edit</i>
+            <i class="material-icons" (click)="delete()">delete</i>
+            <i class="material-icons" (mouseenter)="show()" >color_lens</i>
+            <i class="material-icons notify" *ngIf="note.reminders?.length > 0" >notifications</i>
+        </div>
+
+        
+       
+    </mat-card-footer>
+
+
+</mat-card>
+
+<div class="color-picker">
+        <app-color-selector (change)="change($event)" [(show)]="showPalette"></app-color-selector>
+    </div>

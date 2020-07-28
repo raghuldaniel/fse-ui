@@ -1,0 +1,52 @@
+<mat-card class="card-str">
+    <mat-card-title class="card-tle">Create Reminder</mat-card-title>
+    <mat-card-content class="card-cont reminder-container">
+        <label class="error-message">{{ submitMessage }}</label>
+        <form #remForm="ngForm" class="reminder" (submit)="add(remForm)">
+            <mat-form-field>
+                <mat-label>Reminder Name </mat-label>
+                <input matInput #remName="ngModel" class="" name="remName" required [(ngModel)]="reminder.reminderName">
+                <mat-error *ngIf="remName.invalid">Enter Reminder Name</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Reminder Description </mat-label>
+                <input #remDesc="ngModel" matInput class="" name="remDesc" required [(ngModel)]="reminder.reminderDescription">
+                <mat-error *ngIf="remDesc.invalid">Enter Reminder Description</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Reminder Date </mat-label>
+                <input matInput id="dateField" #remDate="ngModel" [matDatepicker]="picker" name="remDate" placeholder="Choose a date" [(ngModel)]="reminder.reminderCreationDate">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+
+            <mat-card-actions>
+                <button mat-button [disabled]="remForm.invalid">Create</button>
+            </mat-card-actions>
+        </form>
+        <mat-divider></mat-divider>
+        <div class="remindersList">
+            <div>
+                <h3>Reminders List</h3>
+            </div>
+            <mat-form-field class="chip-list">
+                <mat-chip-list #chipList>
+                    <mat-chip *ngFor="let rem of reminders" [selectable]="selectable" [removable]="removable" (removed)="remove(rem)">
+                        {{rem.reminderName}} - {{rem.reminderCreationDate | date }}
+                        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                        <mat-icon *ngIf="removable" (click)="edit(rem)">edit</mat-icon>
+                    </mat-chip>
+
+                </mat-chip-list>
+            </mat-form-field>
+        </div>
+
+
+
+
+
+    </mat-card-content>
+
+</mat-card>

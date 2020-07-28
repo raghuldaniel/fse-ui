@@ -1,0 +1,63 @@
+
+<div class="createuser-container">
+    <mat-card>
+        <mat-card-title> 
+            <span>Create User</span>
+            
+        </mat-card-title>
+        
+        <mat-card-content>
+            <label [ngClass]="submitMessage ? 'error-message' : 'success-message'">{{ submitMessage ? submitMessage : successMessage }}</label>
+            <form #createUserForm="ngForm" class="createUser" (ngSubmit)="createUser(createUserForm)">
+                <mat-form-field>
+                    <mat-label>First Name </mat-label>
+                    <input matInput #firstName= "ngModel" class="" name="firstName" required placeholder="First Name" [(ngModel)]="user.firstName">
+                    <mat-error *ngIf="firstName.invalid">Enter First Name</mat-error> 
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Last Name </mat-label>
+                    <input #lastName="ngModel" matInput class="" name="lastName" required placeholder="Last Name" [(ngModel)]="user.lastName">
+                    <mat-error *ngIf="lastName.invalid">Enter Last Name</mat-error> 
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>User Name </mat-label>
+                    <input  #userName="ngModel" matInput class="" name="username" required placeholder="User Name" [(ngModel)]="user.userName">
+                    <mat-error *ngIf="userName.invalid">Enter User Name</mat-error> 
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>User ID</mat-label>
+                    <input #userId="ngModel" matInput class="" name="userid" required  [(ngModel)]="user.userId">
+                    <mat-error *ngIf="userId.invalid">Enter User ID</mat-error> 
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Password</mat-label>
+                    <input matInput #password="ngModel" type="password" class="password"  [(ngModel)]="user.userPassword" name="password" required>
+                    <mat-error *ngIf="password.invalid">Enter Password</mat-error>                       
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Mobile no</mat-label>
+                    <input #mobile="ngModel" matInput  class="" name="mobile" [(ngModel)]="user.userMobile" required maxlength="10" >
+                    <mat-error *ngIf="mobile.invalid">Enter Mobile no.</mat-error> 
+                    <mat-error *ngIf="mobile?.errors?.maxlength">Mobile no must be 10 digits</mat-error> 
+                </mat-form-field>
+                <mat-form-field>
+                        <mat-label>User Role</mat-label>
+                        <mat-select #userRole="ngModel"  name="role" [(ngModel)]="user.userRole" required>
+                                <mat-option value="Admin">Admin</mat-option>
+                                <mat-option value="Guest">Guest</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="userRole.invalid">Enter User Role</mat-error> 
+                </mat-form-field>
+                <mat-card-actions>
+                    <button mat-button [disabled]="createUserForm.invalid">Create</button>
+                    <button mat-button type="button" ><a href="/login">Back</a></button>
+                    
+
+                </mat-card-actions>
+            </form>
+            
+        </mat-card-content>
+    </mat-card>
+</div>

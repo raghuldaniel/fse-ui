@@ -1,0 +1,26 @@
+
+<div class="keep-c-list-container ">
+	<label>Not-Started</label>
+	<div class="keep-c">
+		<app-note [note]="note" *ngFor="let note of notStartedNotes" class="card-container"></app-note>
+	</div>
+	<!-- Populate notStartedNotes -->
+	<mat-divider></mat-divider>
+</div>
+
+<div class="keep-c-list-container ">
+	<label>Started</label>
+	<div class="keep-c">
+		<app-note [note]="note" *ngFor="let note of startedNotes" class="card-container"></app-note>
+	</div>
+	<!-- Populate startedNotes -->
+	<mat-divider></mat-divider>
+</div>
+<div class="keep-c-list-container ">
+	<label>Completed</label>
+	<div class="keep-c">
+		<app-note [note]="note" *ngFor="let note of completedNotes" class="card-container"></app-note>
+	</div>
+	<!-- Populate completedNotes -->
+</div>
+

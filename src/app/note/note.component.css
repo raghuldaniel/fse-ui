@@ -1,0 +1,54 @@
+*{
+    font-family: 'Product Sans',Arial,sans-serif;
+    box-sizing: border-box;
+}
+
+
+
+.mat-card,.mat-card-actions, .mat-card-content, .mat-card-subtitle, .mat-card-title{
+    word-wrap: break-word;
+}
+
+.label-style{
+    font-size: 20px;
+}
+
+.card-tle{
+    /* color:#ea4335; */
+    font-size: 15px;
+    font-weight: bold;
+    /* text-decoration-line: underline; */
+   
+}
+
+.card-str{
+     
+        border: 1px solid #dadce0;
+        border-radius: 12px;
+     
+}
+.card-cont{
+    font-size: 15px;
+    /* font-weight: bold; */
+    /* color:#4285f4; */
+ }
+.material-icons{
+    font-size: 15px;
+    
+
+}
+
+.actions{
+    margin-left: 15px;
+}
+
+.color-picker{
+    margin-right: 8px;
+
+}  
+
+.notify{
+    float: right;
+    margin-right: 8px;
+}
+ 

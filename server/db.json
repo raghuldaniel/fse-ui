@@ -1,0 +1,124 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "title": "asdasd",
+      "text": "sadsadsdsads",
+      "state": "not-started"
+    },
+    {
+      "id": 2,
+      "title": "Call Ravi",
+      "text": "Track the new submissions",
+      "state": "not-started"
+    },
+    {
+      "title": "Capitalism",
+      "text": "Mark Twain",
+      "id": 3,
+      "state": "started"
+    },
+    {
+      "id": 4,
+      "title": "Read Angular5 blog",
+      "text": "Shall do at 6 pm",
+      "state": "started"
+    },
+    {
+      "id": 5,
+      "title": "Read Angular5 blog",
+      "text": "Shall do at 6 pm1",
+      "state": "not-started"
+    },
+    {
+      "id": 6,
+      "title": "Call Ravi",
+      "text": "Track the new submissions",
+      "state": "completed"
+    },
+    {
+      "id": 7,
+      "title": "Call Ravi",
+      "text": "Track the new submissions",
+      "state": "not-started"
+    },
+    {
+      "title": "read all the books",
+      "text": "At 8 am",
+      "state": "not-started",
+      "id": 8
+    },
+    {
+      "title": "Meet raghul",
+      "text": "At 8pm chennai",
+      "state": "started",
+      "id": 14
+    },
+    {
+      "title": "Read Angular 1 blog",
+      "text": "Shall do at 10.30 pm",
+      "state": "not-started",
+      "id": 15
+    },
+    {
+      "title": "Read Angular 1 blog",
+      "text": "Shall do at 10.30 pm",
+      "state": "not-started",
+      "id": 16
+    },
+    {
+      "title": "DONT",
+      "text": "Dont do anything after 12 am  ssdadggagdgdgdgddggdggdgfgfgfgfg",
+      "state": "completed",
+      "id": 17
+    },
+    {
+      "title": "Read Angular 1 blog",
+      "text": "Shall do at 10.30 pm",
+      "state": "completed",
+      "id": 18
+    },
+    {
+      "title": "Read Angular 1 blog",
+      "text": "Shall do at 10.30 pm",
+      "state": "started",
+      "id": 19
+    },
+    {
+      "title": "Read Angular 1 blog",
+      "text": "Shall do at 10.30 pm",
+      "state": "completed",
+      "id": 20
+    },
+    {
+      "title": "Read Angular 1 blog",
+      "text": "Shall do at 10.30 pm",
+      "state": "completed",
+      "id": 21
+    },
+    {
+      "title": "Read Angular 1 blog",
+      "text": "Shall do at 10.30 pm",
+      "state": "completed",
+      "id": 22
+    },
+    {
+      "title": "Read Angular 1 blog",
+      "text": "Shall do at 10.30 pm",
+      "state": "not-started",
+      "id": 23
+    },
+    {
+      "title": "Syed",
+      "text": "Hello  Syed \nSnacks ",
+      "state": "not-started",
+      "id": 24
+    },
+    {
+      "title": "wdwsds",
+      "text": "sagfffffffffffffffffffffffffffffffffffffffffgsfgfgfgfgfgfgfgfsgfsdgfdgfsdgfgsagfffffffffffffffffffffffffffffffffffffffffgsfgfgfgfgfgfgfgfsgfsdgfdgfsdgfgsagfffffffffffffffffffffffffffffffffffffffffgsfgfgfgfgfgfgfgfsgfsdgfdgfsdgfgsagfffffffffffffffffffffffffffffffffffffffffgsfgfgfgfgfgfgfgfsgfsdgfdgfsdgfgsagfffffffffffffffffffffffffffffffffffffffffgsfgfgfgfgfgfgfgfsgfsdgfdgfsdgfgsagfffffffffffffffffffffffffffffffffffffffffgsfgfgfgfgfgfgfgfsgfsdgfdgfsdgfgsagfffffffffffffffffffffffffffffffffffffffffgsfgfgfgfgfgfgfgfsgfsdgfdgfsdgfgsagfffffffffffffffffffffffffffffffffffffffffgsfgfgfgfgfgfgfgfsgfsdgfdgfsdgfg\nsagfffffffffffffffffffffffffffffffffffffffffgsfgfgfgfgfgfgfgfsgfsdgfdgfsdgfgsagfffffffffffffffffffffffffffffffffffffffffgsfgfgfgfgfgfgfgfsgfsdgfdgfsdgfgsagfffffffffffffffffffffffffffffffffffffffffgsfgfgfgfgfgfgfgfsgfsdgfdgfsdgfgsagfffffffffffffffffffffffffffffffffffffffffgsfgfgfgfgfgfgfgfsgfsdgfdgfsdgfgsagfffffffffffffffffffffffffffffffffffffffffgsfgfgfgfgfgfgfgfsgfsdgfdgfsdgfg",
+      "state": "not-started",
+      "id": 25
+    }
+  ]
+}

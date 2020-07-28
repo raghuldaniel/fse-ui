@@ -1,0 +1,27 @@
+<div class="login-container">
+    <mat-card>
+        <mat-card-title>Keep Login</mat-card-title>
+        <mat-card-content>
+            <label class="error-message">{{ submitMessage }}</label>
+            <form  class="login-form" [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
+                <mat-form-field>
+                    <mat-label>User Name </mat-label>
+                    <input matInput class="username" formControlName="username" required>
+                     <mat-error *ngIf="loginForm.get('username').touched && loginForm.get('username').hasError('required')">Enter Username</mat-error>                       
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" class="password" formControlName="password" required>
+                    <mat-error *ngIf="loginForm.get('password').touched && loginForm.get('password').hasError('required')">Enter Password</mat-error>                       
+                </mat-form-field>
+                <mat-card-actions>
+                    <button mat-button [disabled]="loginForm.invalid">Login</button>
+                    <div class="create">
+                    <a  routerLink="/createuser" routerLinkActive="active">Create User Account</a>
+                    </div>
+                </mat-card-actions>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

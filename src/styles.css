@@ -1,0 +1,108 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+ body {
+   margin: 0;
+   background-color: lightgrey;
+   font-family: 'Product Sans',Arial,sans-serif;
+ }
+
+ .mat-button {
+  color: #fff !important;
+  font-size: 15px;
+  background-color: #3f51b5;
+  font-weight: bolder;
+  align-self: center;
+}
+
+mat-label{
+  color: #3f51b5;
+  font-weight: bolder;
+  
+}
+
+.mat-button[disabled][disabled]{opacity:0.6}
+
+mat-placeholder{
+  color:#3f51b5;
+  font-size: 15px; 
+  font-weight: bold;
+
+}
+
+.mat-dialog-container{
+     
+  border-radius:10px !important;
+}
+
+.mat-pseudo-checkbox-checked, .mat-pseudo-checkbox-indeterminate {
+  background: #3f51b5;
+}
+
+.mat-selection-list .mat-list-option{
+  color: #3f51b5;
+}
+
+.mat-list-text{
+  font-size: 15px;
+  font-family : 'Product Sans',Arial,sans-serif;
+}
+
+.mat-pseudo-checkbox {
+  width: 15px !important  ;
+  height: 15px !important;
+}
+
+.mat-selection-list {
+  padding: 0px !important;
+}
+
+.mat-pseudo-checkbox-checked::after {
+  top: 3px !important;
+  width: 8px !important;
+  height: 3px !important;
+}
+
+.mat-option {
+  font-size: 15px;
+  font-family : 'Product Sans',Arial,sans-serif;
+}
+
+.mat-checkbox-inner-container {
+    
+  height: 12px !important;
+  
+  width: 12px !important;
+ 
+}
+
+.dropdown {
+  position: relative;
+  /* display: inline-block; */
+  float : left;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9ef;
+  /* min-width: 100px; */
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 0px 13px;
+  z-index: 1;
+  text-align: left;
+  border-radius: 7px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.mat-select-panel .mat-option,.mat-input-element {
+  font-size: 15px !important;
+  font-family: 'Product Sans',Arial,sans-serif !important; 
+}
+
+
+
+

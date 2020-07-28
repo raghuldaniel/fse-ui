@@ -1,0 +1,70 @@
+<div class="edit-note-container">
+  <!-- Label to display any error messages -->
+  <label class="error-message">{{errMessage}}</label>
+  
+  <form class="edit-note-container">
+    <mat-form-field>
+      <mat-placeholder>Title</mat-placeholder>
+      <input [(ngModel)]="note.noteTitle" name="editTitle" matInput type="text" required>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-placeholder>Description..</mat-placeholder>
+      <textarea [(ngModel)]="note.noteContent" name="editText" matInput required></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label class="">Select state</mat-label>
+      <mat-select name="editStatus" [(ngModel)]="note.noteStatus">
+        <mat-option [value]="">Please select state</mat-option>
+        <mat-option *ngFor="let state of states" [value]="state">
+          {{ state }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+  <div>
+      <mat-chip-list #chipList>
+        
+              <mat-chip *ngFor="let catg of selectedCategories" 
+                      ><mat-icon class="chip-icons" >label</mat-icon>
+                {{catg.categoryName}}
+                
+              </mat-chip>
+              <mat-chip *ngFor="let rem of selectedReminders" 
+                       ><mat-icon class="chip-icons" >alarm</mat-icon>
+                       {{rem.reminderName}} - {{rem.reminderCreationDate | date }}
+               
+              </mat-chip>
+            </mat-chip-list>
+
+</div>
+    <div class="keep-c-done-wrapper">
+
+
+      <div class="" style="text-align: center">
+                
+                
+        <div class="dropdown">
+            <i class="material-icons note-actions label-icon" >label</i>
+            <div class="dropdown-content">
+                <mat-checkbox class="example-margin" [(checked)]="cat.checked" *ngFor="let cat of categories" (change)="addRemoveCategories(cat)"> {{cat.categoryName}}</mat-checkbox>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <i class="material-icons note-actions label-icon" >alarm</i>
+            <div class="dropdown-content">
+                <mat-checkbox class="example-margin" [(checked)]="rem.checked" *ngFor="let rem of reminders" (change)="addRemoveReminders(rem)"> {{rem.reminderName}}</mat-checkbox>
+            </div>
+            
+        </div>
+        
+
+       <button mat-button (click)="onSave()" class="note-btn">Add</button>
+        <!-- <button mat-button (click)="addNote()" class="note-btn">Add</button> -->
+    </div>
+      
+    </div>
+
+    
+  
+</div>
