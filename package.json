@@ -6,7 +6,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng test",
+    "test": "ng test --watch=false --browsers=ChromeHeadless",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "serve": "node server/bin/www"
@@ -32,6 +32,7 @@
     "object-assign": "^4.1.1",
     "promise": "^8.0.1",
     "rxjs": "^5.5.2",
+    "symbol-observable": "^1.2.0",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {
