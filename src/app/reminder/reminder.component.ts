@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { Reminder } from '../reminder';
 import { ReminderService } from '../services/reminder.service';
-import { NgForm } from '@angular/forms/src/directives/ng_form';
 
 export interface Fruit {
   name: string;
@@ -44,7 +43,7 @@ export class ReminderComponent implements OnInit {
   // readonly separatorKeysCodes: number[] = [ENTER, COMMA];
 
 
-  add(form: NgForm): void {
+  add(form): void {
     if (this.mode) {
       this.reminderService.addReminder(this.reminder).subscribe(res => {
         this.successMessage = "User saved successfully!!!";

@@ -18,7 +18,7 @@ export class LoginComponent {
     password: new FormControl()
   });
 
-  @ViewChild(FormGroupDirective)
+  @ViewChild(FormGroupDirective, { static: true })
   formGroupDirective: FormGroupDirective;
 
   constructor(private authService: AuthenticationService,

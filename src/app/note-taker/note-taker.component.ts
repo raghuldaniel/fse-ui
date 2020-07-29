@@ -1,8 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Note } from '../note';
 import { NotesService } from '../services/notes.service';
-import { FormControl } from '@angular/forms/src/model';
-import { MatMenuTrigger } from '@angular/material/menu/typings/menu-trigger';
 import { CategoryService } from '../services/category.service';
 import { ReminderService } from '../services/reminder.service';
 import { Category } from '../category';
