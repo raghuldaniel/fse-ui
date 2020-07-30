@@ -24,7 +24,7 @@ export class CategoryService {
 
     const token = this.authService.getBearerToken();
     const userId = this.authService.getUserId();
-    //this.headers.set('Authorization', `Bearer ${token}`);
+    // this.headers.set('Authorization', `Bearer ${token}`);
     this.httpClient.get<Category[]>(`http://localhost:8083/api/v1/category/${userId}`, {
       headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
     }).subscribe(resp => {
@@ -52,7 +52,7 @@ export class CategoryService {
       headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
     }).pipe(
       tap(res => {
-        console.log("respomse" + res);
+        console.log('respomse' + res);
         this.categories.push(res);
         this.categoriesSubject.next(this.categories);
       })
@@ -63,7 +63,7 @@ export class CategoryService {
 
     const token = this.authService.getBearerToken();
     const userId = this.authService.getUserId();
-    //this.headers.set('Authorization', `Bearer ${token}`);
+    // this.headers.set('Authorization', `Bearer ${token}`);
     this.httpClient.delete(`http://localhost:8083/api/v1/category/${catId}`, {
       headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
     }).subscribe(resp => {
@@ -71,13 +71,13 @@ export class CategoryService {
 
       this.categories = this.categories.filter(function (ca, i) {
 
-        return ca.categoryId != catId;
+        return ca.categoryId !== catId;
 
       });
 
       this.categoriesSubject.next(this.categories);
     }, err => {
-      console.log("Error", err);
+      console.log('Error', err);
     });
 
     return true;

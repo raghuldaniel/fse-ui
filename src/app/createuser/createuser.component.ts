@@ -14,11 +14,11 @@ import { AuthenticationService } from '../services/authentication.service';
 })
 export class CreateuserComponent implements OnInit {
 
-  public user : User;
+  public user: User;
 
-  constructor(private createUserService : CreateuserService,
-  private authService : AuthenticationService) { }
-  
+  constructor(private createUserService: CreateuserService,
+  private authService: AuthenticationService) { }
+
   public submitMessage: string;
 
   public successMessage: string;
@@ -27,20 +27,20 @@ export class CreateuserComponent implements OnInit {
     this.user = new User();
   }
 
-  createUser(createUserForm : NgForm){
+  createUser(createUserForm: NgForm) {
     this.createUserService.createUser(this.user).subscribe(res => {
-      console.log("res"+res);
-      this.successMessage = "User saved successfully!!!";
-      
+      console.log('res' + res);
+      this.successMessage = 'User saved successfully!!!';
+
     },
     error => {
-     
+
         this.submitMessage = error.message;
-        
+
       });
       this.submitMessage = '';
       createUserForm.resetForm();
-      
+
   }
 
 }

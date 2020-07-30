@@ -12,8 +12,8 @@ import { NotesService } from '../services/notes.service';
 export class NoteComponent {
   @Input()
   note: Note;
-  showPalette : boolean;
-  color : String;
+  showPalette: boolean;
+  color: String;
 
   constructor(private routerService: RouterService,
   private noteService: NotesService) {
@@ -31,15 +31,15 @@ export class NoteComponent {
     this.noteService.deleteNote(this.note.noteId);
   }
 
-  show(){
+  show() {
     this.showPalette = !this.showPalette;
   }
 
 
-  change(color : string){
-    
+  change(color: string) {
+
     this.note.color = color;
-    this.noteService.editNote(this.note).subscribe(res =>{
+    this.noteService.editNote(this.note).subscribe(res => {
       console.log(res);
     });
 

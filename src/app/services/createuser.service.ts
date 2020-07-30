@@ -7,10 +7,10 @@ import { tap } from 'rxjs/operators/tap';
 @Injectable()
 export class CreateuserService {
   user: User;
-  headers: HttpHeaders
+  headers: HttpHeaders;
   constructor(private httpClient: HttpClient) {
     this.headers = new HttpHeaders();
-    this.headers.set('Content-Type', 'application/json')
+    this.headers.set('Content-Type', 'application/json');
   }
 
   createUser(user: User): Observable<User> {

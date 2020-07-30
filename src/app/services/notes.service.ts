@@ -25,17 +25,17 @@ export class NotesService {
   fetchNotesFromServer() {
     const token = this.authService.getBearerToken();
     const userId = this.authService.getUserId();
-    //this.headers.set('Authorization', `Bearer ${token}`);
-    
+    // this.headers.set('Authorization', `Bearer ${token}`);
+
     this.httpClient.get<Note[]>(`http://localhost:9092/api/v1/note/${userId}`, {
       headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
     }).subscribe(resp => {
       console.log('fetch' + resp);
-      if(resp != null){
+      if (resp != null) {
         this.notes = resp;
         this.notesSubject.next(this.notes);
-      }  
-    }); 
+      }
+    });
   }
 
   getNotes(): BehaviorSubject<Array<Note>> {
@@ -47,7 +47,7 @@ export class NotesService {
 
     note.noteCreatedBy = this.authService.getUserId();
     note.noteId = new Date().getMilliseconds();
-    note.noteStatus = "not-started";
+    note.noteStatus = 'not-started';
     console.log(note);
     return this.httpClient.post<Note>('http://localhost:9092/api/v1/note', note, {
       headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
@@ -86,7 +86,7 @@ export class NotesService {
 
     const token = this.authService.getBearerToken();
     const userId = this.authService.getUserId();
-    //this.headers.set('Authorization', `Bearer ${token}`);
+    // this.headers.set('Authorization', `Bearer ${token}`);
     this.httpClient.delete(`http://localhost:9092/api/v1/note/${userId}/${id}`, {
       headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
     }).subscribe(resp => {
@@ -94,13 +94,13 @@ export class NotesService {
 
       this.notes = this.notes.filter(function (ca, i) {
 
-        return ca.noteId != id;
+        return ca.noteId !== id;
 
       });
 
       this.notesSubject.next(this.notes);
     }, err => {
-      console.log("Error", err);
+      console.log('Error', err);
     });
 
     return true;

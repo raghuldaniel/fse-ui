@@ -30,7 +30,7 @@ export class LoginComponent {
   loginSubmit() {
     console.log(this.loginForm.value['username']);
     this.authService.authenticateUser(this.loginForm.value).subscribe(response => {
-      console.log('response'+ this.loginForm.value['username'] );
+      console.log('response' + this.loginForm.value['username'] );
       this.authService.setBearerToken(response);
       this.routerService.routeToDashboard();
     },
@@ -39,12 +39,12 @@ export class LoginComponent {
           this.submitMessage = error.error.message;
         } else {
           this.submitMessage = error.message;
-          
+
         }
 
         console.log(JSON.stringify(error));
       });
-    this.authService.setUserId(this.loginForm.value['username']); 
+    this.authService.setUserId(this.loginForm.value['username']);
     this.loginForm.reset();
     this.formGroupDirective.resetForm();
 

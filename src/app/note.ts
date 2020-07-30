@@ -1,5 +1,5 @@
-import { Category } from "./category";
-import { Reminder } from "./reminder";
+import { Category } from './category';
+import { Reminder } from './reminder';
 
 export class Note {
   noteId: Number;
@@ -7,12 +7,12 @@ export class Note {
   noteCreationDate: Date;
   noteStatus: string;
   noteCreatedBy: string;
-  category : Category[];
-  reminders : Reminder[];
-  noteTitle : string;
-  color : String;
+  category: Category[];
+  reminders: Reminder[];
+  noteTitle: string;
+  color: String;
 
   constructor() {
-    
+
   }
 }

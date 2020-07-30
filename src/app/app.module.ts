@@ -86,7 +86,7 @@ const appRoutes: Routes = [
     NoteViewComponent,
     ListViewComponent,
     NoteComponent,
-    EditNoteOpenerComponent, 
+    EditNoteOpenerComponent,
     EditNoteViewComponent,
     CategoryComponent,
     ReminderComponent,
@@ -121,7 +121,7 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: false }
     )],
-  providers: [NotesService, CanActivateRouteGuard, AuthenticationService, RouterService,CreateuserService,CategoryService,ReminderService
+  providers: [NotesService, CanActivateRouteGuard, AuthenticationService, RouterService, CreateuserService, CategoryService, ReminderService
     ],
   bootstrap: [AppComponent],
   entryComponents: [EditNoteViewComponent]

@@ -24,7 +24,7 @@ export class ReminderService {
 
     const token = this.authService.getBearerToken();
     const userId = this.authService.getUserId();
-    //this.headers.set('Authorization', `Bearer ${token}`);
+    // this.headers.set('Authorization', `Bearer ${token}`);
     this.httpClient.get<Reminder[]>(`http://localhost:8081/api/v1/reminder/${userId}`, {
       headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
     }).subscribe(resp => {
@@ -52,7 +52,7 @@ export class ReminderService {
       headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
     }).pipe(
       tap(res => {
-        console.log("respomse" + res);
+        console.log('respomse' + res);
         this.reminders.push(res);
         this.remindersSubject.next(this.reminders);
       })
@@ -69,7 +69,7 @@ export class ReminderService {
       headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
     }).pipe(
       tap(res => {
-        console.log("respomse" + res);
+        console.log('respomse' + res);
         const enote = this.reminders.find(n => n.reminderId === res.reminderId);
         Object.assign(enote, res);
         this.remindersSubject.next(this.reminders);
@@ -83,16 +83,16 @@ export class ReminderService {
     const token = this.authService.getBearerToken();
     this.httpClient.delete(`http://localhost:8081/api/v1/reminder/${remId}`, {
       headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
-    }).subscribe(resp => { 
-      this.reminders = this.reminders.filter(function (ca, i) {  
+    }).subscribe(resp => {
+      this.reminders = this.reminders.filter(function (ca, i) {
 
-        return ca.reminderId != remId;
+        return ca.reminderId !== remId;
 
       });
 
       this.remindersSubject.next(this.reminders);
     }, err => {
-      console.log("Error", err);
+      console.log('Error', err);
     });
 
     return true;

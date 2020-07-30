@@ -21,7 +21,7 @@ export class EditNoteViewComponent implements OnInit {
   categories: Category[];
   reminders: Reminder[];
   selectedReminders: Reminder[];
-  selectedCategories: Category[]
+  selectedCategories: Category[];
 
 
 
@@ -43,18 +43,18 @@ export class EditNoteViewComponent implements OnInit {
     this.selectedCategories = this.note.category;
     this.selectedReminders = this.note.reminders;
     this.errMessage = '';
-    console.log(this.selectedCategories )
+    console.log(this.selectedCategories );
     this.catService.getCategories().subscribe(res => {
       this.categories = res;
-      console.log(this.categories)
+      console.log(this.categories);
       if (this.selectedCategories != null) {
         this.categories.forEach(element => {
 
           this.selectedCategories.forEach(ele => {
-            
-            if (element.categoryId == ele.categoryId) {
+
+            if (element.categoryId === ele.categoryId) {
               element.checked = true;
-              console.log("che cked elee")
+              console.log('che cked elee');
 
             }
           });
@@ -70,13 +70,13 @@ export class EditNoteViewComponent implements OnInit {
 
     this.remService.getReminders().subscribe(res => {
       this.reminders = res;
-      if (this.selectedReminders != null) {
+      if (this.selectedReminders !== null) {
         this.reminders.forEach(element => {
 
           this.selectedReminders.forEach(ele => {
-            if (element.reminderId == ele.reminderId) {
+            if (element.reminderId === ele.reminderId) {
               element.checked = true;
-              console.log("che cked rem")
+              console.log('che cked rem');
 
 
             }
@@ -112,32 +112,32 @@ export class EditNoteViewComponent implements OnInit {
   addRemoveCategories(cat: Category) {
 
     cat.checked = !cat.checked;
-    let seleRem = this.selectedCategories.filter(function(value){
-      return value.categoryId != cat.categoryId;
+    const seleRem = this.selectedCategories.filter(function(value) {
+      return value.categoryId !== cat.categoryId;
     });
 
-    if(seleRem.length != this.selectedCategories.length){
+    if (seleRem.length !== this.selectedCategories.length) {
       this.selectedCategories = seleRem;
-    }else{
+    } else {
       this.selectedCategories.push(cat);
     }
-    
+
 
   }
 
   addRemoveReminders(rem: Reminder) {
 
      rem.checked = !rem.checked;
-      let seleRem = this.selectedReminders.filter(function(value){
-        return value.reminderId != rem.reminderId;
+      const seleRem = this.selectedReminders.filter(function(value) {
+        return value.reminderId !== rem.reminderId;
       });
 
-      if(seleRem.length != this.selectedReminders.length){
+      if (seleRem.length !== this.selectedReminders.length) {
         this.selectedReminders = seleRem;
-      }else{
+      } else {
         this.selectedReminders.push(rem);
       }
-     
+
 
 
   }

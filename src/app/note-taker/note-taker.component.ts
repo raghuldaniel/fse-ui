@@ -44,7 +44,7 @@ export class NoteTakerComponent implements OnInit {
     });
     this.remService.getReminders().subscribe(res => {
       this.reminders = res;
-    })
+    });
   }
 
 
@@ -59,16 +59,16 @@ export class NoteTakerComponent implements OnInit {
 
     this.errMessage = '';
     this.note.noteCreationDate = new Date();
-    this.selectedCategories.forEach(function(value){
+    this.selectedCategories.forEach(function(value) {
       value.checked = true;
     });
-    this.selectedReminders.forEach(function(value){
+    this.selectedReminders.forEach(function(value) {
       value.checked = true;
-    })
+    });
     this.note.category = this.selectedCategories;
     this.note.reminders = this.selectedReminders;
     this.notesService.addNote(this.note).subscribe(data => {
-    }, 
+    },
       error => {
         this.errMessage = error.message;
         console.log('err', error);
@@ -79,21 +79,21 @@ export class NoteTakerComponent implements OnInit {
   }
 
 
-  addRemoveCategories(cat : Category){
-    let index = this.selectedCategories.indexOf(cat);
-    if(index >= 0){
-      this.selectedCategories.splice(index,1)
-    }else{
+  addRemoveCategories(cat: Category) {
+    const index = this.selectedCategories.indexOf(cat);
+    if (index >= 0) {
+      this.selectedCategories.splice(index, 1);
+    } else {
       this.selectedCategories.push(cat);
     }
 
   }
 
-  addRemoveReminders(rem : Reminder){
-    let index = this.selectedReminders.indexOf(rem);
-    if(index >= 0){
-      this.selectedReminders.splice(index,1)
-    }else{
+  addRemoveReminders(rem: Reminder) {
+    const index = this.selectedReminders.indexOf(rem);
+    if (index >= 0) {
+      this.selectedReminders.splice(index, 1);
+    } else {
       this.selectedReminders.push(rem);
     }
 

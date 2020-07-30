@@ -35,7 +35,7 @@ export class ReminderComponent implements OnInit {
 
   ngOnInit() {
     this.reminderService.getReminders().subscribe(res => {
-      console.log("catres" + res);
+      console.log('catres' + res);
       this.reminders = res;
     });
   }
@@ -46,20 +46,20 @@ export class ReminderComponent implements OnInit {
   add(form): void {
     if (this.mode) {
       this.reminderService.addReminder(this.reminder).subscribe(res => {
-        this.successMessage = "User saved successfully!!!";
-        console.log(res)
+        this.successMessage = 'User saved successfully!!!';
+        console.log(res);
       }, err => {
-        console.log(err)
+        console.log(err);
       });
 
       this.mode = true;
     } else {
 
       this.reminderService.updateReminder(this.reminder).subscribe(res => {
-        this.successMessage = "User saved successfully!!!";
-        console.log(res)
+        this.successMessage = 'User saved successfully!!!';
+        console.log(res);
       }, err => {
-        console.log(err)
+        console.log(err);
       });
       this.reminder = new Reminder();
       this.removable = true;

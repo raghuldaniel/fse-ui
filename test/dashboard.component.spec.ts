@@ -43,7 +43,7 @@ describe('DashboardComponent', () => {
   }));
 
   beforeEach(() => {
-    notesService = TestBed.get(NotesService);
+    notesService = TestBed.inject(NotesService);
     spyFetchNotesFromServer = spyOn(notesService, 'fetchNotesFromServer').and.returnValue(Observable.of(testConfig.notes));
   });
 

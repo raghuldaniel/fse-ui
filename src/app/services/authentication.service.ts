@@ -12,11 +12,11 @@ export class AuthenticationService {
   headers: HttpHeaders;
 
   authenticateUser(data) {
-    let user = new User();
+    const user = new User();
     user.userId = data.username;
     user.userPassword = data.password;
     this.headers = new HttpHeaders();
-    this.headers.set('Content-Type', 'application/json')
+    this.headers.set('Content-Type', 'application/json');
     return this.httpClient.post('http://localhost:8089/api/v1/auth/login', user, {
       headers: this.headers,
       responseType: 'text'
@@ -52,7 +52,7 @@ export class AuthenticationService {
       //     resolve(isAuthenticated);
       //   });
 
-      if (token == null || token == '' || token == undefined) {
+      if (!token) {
         resolve(false);
       } else {
         resolve(true);

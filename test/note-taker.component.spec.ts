@@ -136,7 +136,7 @@ describe('NoteTakerComponent', () => {
     textArea = fixture.debugElement.nativeElement.querySelector('textarea');
     debugElement = fixture.debugElement.query(By.css('.error-message'));
 
-    spyTakeNotes = spyOn(notesService, 'addNote').and.returnValue(Observable.throw(errorResponse404));
+    spyTakeNotes = spyOn(notesService, 'addNote').and.returnValue(Observable.throwError(errorResponse404));
     if (inputBox !== null && textArea !== null && doneButton !== null && debugElement !== null) {
       inputBox.value = testConfig.addNotes.positive.title;
       inputBox.dispatchEvent(new Event('input'));

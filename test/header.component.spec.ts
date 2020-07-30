@@ -103,8 +103,8 @@ describe('HeaderComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(HeaderComponent);
-    router =  TestBed.get(Router);
-    location = TestBed.get(Location);
+    router =  TestBed.inject(Router);
+    location = TestBed.inject(Location);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

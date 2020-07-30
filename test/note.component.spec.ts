@@ -119,8 +119,8 @@ describe('NoteComponent', () => {
   }));
 
   beforeEach(() => {
-    location = TestBed.get(Location);
-    router = TestBed.get(Router);
+    location = TestBed.inject(Location);
+    router = TestBed.inject(Router);
     fixture = TestBed.createComponent(NoteComponent);
     noteComponent = fixture.componentInstance;
     noteComponent.note = testConfig.getNotes.positive;

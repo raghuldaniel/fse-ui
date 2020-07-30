@@ -160,7 +160,7 @@ describe('EditNoteViewComponent', () => {
     textArea = fixture.debugElement.nativeElement.querySelector('textarea');
     debugElement = fixture.debugElement.query(By.css('.error-message'));
 
-    spyEditNote = spyOn(notesService, 'editNote').and.returnValue(Observable.throw(errorResponse404));
+    spyEditNote = spyOn(notesService, 'editNote').and.returnValue(Observable.throwError(errorResponse404));
     if (inputBox !== null && textArea !== null && doneButton !== null && debugElement !== null) {
       doneButton.click();
       tick();

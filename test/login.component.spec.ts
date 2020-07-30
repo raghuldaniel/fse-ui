@@ -138,7 +138,7 @@ describe('LoginComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(LoginComponent);
-    location = TestBed.get(Location);
+    location = TestBed.inject(Location);
     loginComponent = fixture.componentInstance;
     authenticationService = fixture.debugElement.injector.get(AuthenticationService);
     routerService = fixture.debugElement.injector.get(RouterService);
@@ -153,10 +153,10 @@ describe('LoginComponent', () => {
     positiveResponse = testConfig.positive;
     spyAuthenticateUser = spyOn(authenticationService, 'authenticateUser').and.returnValue(Observable.of(positiveResponse));
     const token = testConfig.positive.token;
-    spySetBearerToken = spyOn(authenticationService, 'setBearerToken').and.callFake(function(){
+    spySetBearerToken = spyOn(authenticationService, 'setBearerToken').and.callFake(function() {
       localStorage.setItem('bearerToken', token);
     });
-    spyRouteToDashboard = spyOn(routerService, 'routeToDashboard').and.callFake(function(){});
+    spyRouteToDashboard = spyOn(routerService, 'routeToDashboard').and.callFake(function() {});
     const username = new FormControl('stranger');
     loginComponent.username = username;
     const password = new FormControl('password');
@@ -170,7 +170,7 @@ describe('LoginComponent', () => {
     loginComponent.submitMessage = ' ';
     fixture.detectChanges();
     debugElement = fixture.debugElement.query(By.css('.error-message'));
-    spyAuthenticateUser = spyOn(authenticationService, 'authenticateUser').and.returnValue(Observable.throw(errorMessage));
+    spyAuthenticateUser = spyOn(authenticationService, 'authenticateUser').and.returnValue(Observable.throwError(errorMessage));
 
     const username = new FormControl('stranger');
     loginComponent.username = username;
@@ -197,7 +197,7 @@ describe('LoginComponent', () => {
     loginComponent.submitMessage = ' ';
     fixture.detectChanges();
     debugElement = fixture.debugElement.query(By.css('.error-message'));
-    spyAuthenticateUser = spyOn(authenticationService, 'authenticateUser').and.returnValue(Observable.throw(errorMessage));
+    spyAuthenticateUser = spyOn(authenticationService, 'authenticateUser').and.returnValue(Observable.throwError(errorMessage));
 
     const username = new FormControl('stranger');
     loginComponent.username = username;

@@ -1,4 +1,4 @@
-import { Component, OnInit,Input, Output,EventEmitter   } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter   } from '@angular/core';
 
 
 @Component({
@@ -10,16 +10,13 @@ export class ColorSelectorComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
-
   public defaultColors: string[] = [
     '#ffffff',
     '#D7AEFB',
     '#F28B82',
-    "#A7FFEB",
-    "#FFF475"
-   
+    '#A7FFEB',
+    '#FFF475'
+
 
   ];
 
@@ -27,14 +24,17 @@ export class ColorSelectorComponent implements OnInit {
   @Input() color: string;
   @Output() change = new EventEmitter();
 
-  @Input() show : boolean;
+  @Input() show: boolean;
+
+  ngOnInit() {
+  }
 
   /**
  * Change color from default colors
  * @param {string} color
  */
 public changeColor(color: string) {
-  console.log('changed'+color);
+  console.log('changed' + color);
   this.color = color;
   this.change.emit(this.color); // Return color
   this.show = false;

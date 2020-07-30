@@ -27,8 +27,8 @@ describe('CanActivateRouteGuard', () => {
         RouterService
       ]
     });
-    canActivateRouteGuard = TestBed.get(CanActivateRouteGuard);
-    authService = TestBed.get(AuthenticationService);
+    canActivateRouteGuard = TestBed.inject(CanActivateRouteGuard);
+    authService = TestBed.inject(AuthenticationService);
   });
 
   it('should create route guard service', inject([CanActivateRouteGuard], (guard: CanActivateRouteGuard) => {
